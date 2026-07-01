@@ -7,10 +7,10 @@ from trello import (
     create_trello_card
 )
 
-if len(sys.argv) < 2:
+if len(sys.argv) != 2:
     print("Usage:")
     print("python board_builder.py <template.json>")
-    exit()
+    sys.exit(1)
 
 template = sys.argv[1]
 
@@ -26,7 +26,7 @@ board = get_board(project["board"])
 
 if board is None:
     print("❌ Board not found")
-    exit()
+    sys.exit(1)
 
 print("✓ Board found")
 
@@ -47,7 +47,12 @@ for list_data in project["lists"]:
 
     print(f"\n📋 {list_data['name']}")
 
-    for card_name in list_data["cards"]:
+    for card in list_data["cards"]:
+
+        if isinstance(card, str):
+            card_name = card
+        else:
+            card_name = card["name"]
 
         create_trello_card(
             trello_list["id"],
