@@ -1,18 +1,36 @@
-import requests
-api_key = "d4e35dda50b7a4249e6ea6b6c016f5d0"
-token = "ATTA98914e607d6011b027f1c7fbc12957edcc16e6c190f9a1eaeb06677521aa8d3c09BCA480"
-board_id = "6a4431232a123a5a62c54436"
+import json
 
-url = "https://api.trello.com/1/lists"
+from trello import (
+    get_board,
+    create_trello_list,
+    create_trello_card
+)
 
-query = {
-    "key": api_key,
-    "token": token,
-    "idBoard": board_id,
-    "name": "📋 Product Backlog"
-}
+with open("templates/after_the_amen.json", "r", encoding="utf-8") as file:
+    project = json.load(file)
 
-response = requests.post(url, params=query)
+board = get_board(project["board"])
 
-print(response.status_code)
-print(response.text)
+if board is None:
+    print("Board not found.")
+    exit()
+
+print(f'Building "{project["board"]}"')
+
+for list_data in project["lists"]:
+
+    trello_list = create_trello_list(
+        board["id"],
+        list_data["name"]
+    )
+
+    if trello_list is None:
+        continue
+
+    for card_name in list_data["cards"]:
+        create_trello_card(
+            trello_list["id"],
+            card_name
+        )
+
+print("Done!")

@@ -1,0 +1,20 @@
+{
+  "board": "After the Amen",
+  "lists": [
+    {
+      "name": "📋 Product Backlog",
+      "cards": [
+        "Project Vision",
+        "Define MVP",
+        "Research Copyright"
+      ]
+    },
+    {
+      "name": "🚀 Sprint 1",
+      "cards": [
+        "Set up project",
+        "Connect GitHub"
+      ]
+    }
+  ]
+}
