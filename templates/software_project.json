@@ -1,0 +1,25 @@
+{
+  "board": "Software Project",
+  "lists": [
+    {
+      "name": "📥 Backlog",
+      "cards": [
+        "Create README",
+        "Setup CI",
+        "Add unit tests"
+      ]
+    },
+    {
+      "name": "🚧 In Progress",
+      "cards": []
+    },
+    {
+      "name": "👀 Review",
+      "cards": []
+    },
+    {
+      "name": "✅ Done",
+      "cards": []
+    }
+  ]
+}
