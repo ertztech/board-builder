@@ -4,7 +4,9 @@
     {
       "name": "📋 Product Backlog",
       "cards": [
-        "Project Vision",
+        {
+  "name": "Project Vision"
+},
         "Define MVP",
         "Research Copyright",
         "Build Transcript Engine",
