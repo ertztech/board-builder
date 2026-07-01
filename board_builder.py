@@ -1,4 +1,5 @@
 import json
+import sys
 
 from trello import (
     get_board,
@@ -6,7 +7,14 @@ from trello import (
     create_trello_card
 )
 
-with open("templates/after_the_amen.json", "r", encoding="utf-8") as file:
+if len(sys.argv) < 2:
+    print("Usage:")
+    print("python board_builder.py <template.json>")
+    exit()
+
+template = sys.argv[1]
+
+with open(template, "r", encoding="utf-8") as file:
     project = json.load(file)
 
 print()

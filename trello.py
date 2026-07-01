@@ -27,9 +27,21 @@ def get_board(board_name):
 
     for board in boards:
         if board["name"] == board_name:
+            print(f'Board already exists: {board_name}')
             return board
 
-    return None
+    print(f'Creating board: {board_name}')
+
+    response = requests.post(
+        "https://api.trello.com/1/boards",
+        params={
+            "key": api_key,
+            "token": token,
+            "name": board_name
+        }
+    )
+
+    return handle_response(response)
 
 def get_lists(board_id):
     response = requests.get(
