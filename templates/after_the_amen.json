@@ -5,20 +5,38 @@
       "name": "📋 Product Backlog",
       "cards": [
         {
-  "name": "Project Vision"
-},
-        "Define MVP",
-        "Research Copyright",
-        "Build Transcript Engine",
-        "Generate AI Summary"
+          "name": "Project Vision"
+        },
+        {
+          "name": "Define MVP"
+        },
+        {
+          "name": "Research Copyright"
+        },
+        {
+          "name": "Build Transcript Engine"
+        },
+        {
+          "name": "Generate AI Summary"
+        },
+        {
+          "name": "Description Test",
+          "description": "If you can read this in Trello, Issue #6 works!"
+        }
       ]
     },
     {
       "name": "🚀 Sprint 1",
       "cards": [
-        "Create Project Structure",
-        "Connect GitHub",
-        "Refactor Trello API"
+        {
+          "name": "Create Project Structure"
+        },
+        {
+          "name": "Connect GitHub"
+        },
+        {
+          "name": "Refactor Trello API"
+        }
       ]
     },
     {
@@ -32,9 +50,15 @@
     {
       "name": "💡 Future Ideas",
       "cards": [
-        "Jira Support",
-        "GitHub Projects",
-        "Azure DevOps"
+        {
+          "name": "Jira Support"
+        },
+        {
+          "name": "GitHub Projects"
+        },
+        {
+          "name": "Azure DevOps"
+        }
       ]
     }
   ]

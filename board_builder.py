@@ -49,17 +49,12 @@ for list_data in project["lists"]:
 
     for card in list_data["cards"]:
 
-        if isinstance(card, str):
-            card_name = card
-        else:
-            card_name = card["name"]
-
         create_trello_card(
-            trello_list["id"],
-            card_name
-        )
+        trello_list["id"],
+        card
+    )
 
-        card_count += 1
+    card_count += 1
 
 print()
 print("=" * 50)

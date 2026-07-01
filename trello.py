@@ -88,14 +88,21 @@ def create_trello_list(board_id, list_name):
     return handle_response(response)
 
 
-def create_trello_card(list_id, card_name):
+def create_trello_card(list_id, card):
+
+    if isinstance(card, str):
+        card_name = card
+        card_description = ""
+    else:
+        card_name = card["name"]
+        card_description = card.get("description", "")
 
     cards = get_cards(list_id)
 
-    for card in cards:
-        if card["name"] == card_name:
+    for existing_card in cards:
+        if existing_card["name"] == card_name:
             print(f"Card already exists: {card_name}")
-            return card
+            return existing_card
 
     response = requests.post(
         "https://api.trello.com/1/cards",
@@ -103,7 +110,8 @@ def create_trello_card(list_id, card_name):
             "key": api_key,
             "token": token,
             "idList": list_id,
-            "name": card_name
+            "name": card_name,
+            "desc": card_description
         }
     )
 
