@@ -50,11 +50,11 @@ for list_data in project["lists"]:
     for card in list_data["cards"]:
 
         create_trello_card(
-        trello_list["id"],
-        card
-    )
+            trello_list["id"],
+            card
+        )
 
-    card_count += 1
+        card_count += 1
 
 print()
 print("=" * 50)
