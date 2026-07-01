@@ -6,14 +6,33 @@
       "cards": [
         "Project Vision",
         "Define MVP",
-        "Research Copyright"
+        "Research Copyright",
+        "Build Transcript Engine",
+        "Generate AI Summary"
       ]
     },
     {
       "name": "🚀 Sprint 1",
       "cards": [
-        "Set up project",
-        "Connect GitHub"
+        "Create Project Structure",
+        "Connect GitHub",
+        "Refactor Trello API"
+      ]
+    },
+    {
+      "name": "👀 In Review",
+      "cards": []
+    },
+    {
+      "name": "✅ Done",
+      "cards": []
+    },
+    {
+      "name": "💡 Future Ideas",
+      "cards": [
+        "Jira Support",
+        "GitHub Projects",
+        "Azure DevOps"
       ]
     }
   ]

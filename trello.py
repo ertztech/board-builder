@@ -31,8 +31,26 @@ def get_board(board_name):
 
     return None
 
+def get_lists(board_id):
+    response = requests.get(
+        f"https://api.trello.com/1/boards/{board_id}/lists",
+        params={
+            "key": api_key,
+            "token": token
+        }
+    )
+
+    return handle_response(response)
 
 def create_trello_list(board_id, list_name):
+
+    lists = get_lists(board_id)
+
+    for trello_list in lists:
+        if trello_list["name"] == list_name:
+            print(f"List already exists: {list_name}")
+            return trello_list
+
     response = requests.post(
         f"https://api.trello.com/1/boards/{board_id}/lists",
         params={
@@ -41,6 +59,8 @@ def create_trello_list(board_id, list_name):
             "name": list_name
         }
     )
+
+    print(f"Created list: {list_name}")
 
     return handle_response(response)
 
